@@ -1,5 +1,25 @@
 # Hybrid App(Flutter + Web App) 開發指南
 
+## 目錄
+
+- [介紹](#介紹)
+- [套件選擇](#套件選擇)
+  - [webview_flutter](#webview_flutter)
+- [Flutter 與 Web App 的溝通方式](#flutter-與-web-app-的溝通方式)
+  - [初始化通道與 callback 函數](#初始化通道與callback函數)
+  - [Flutter → Web App](#flutter--web-app)
+  - [Web App → Flutter](#web-app--flutter)
+- [資料的同步化](#資料的同步化)
+  - [同步化流程](#同步化流程)
+  - [常見的資料同步方法](#常見的資料同步方法)
+    - [1. URL 傳遞](#1-url-傳遞)
+    - [2. Cookie 儲存](#2-cookie-儲存)
+    - [3. LocalStorage 儲存](#3-localstorage-儲存)
+- [性能優化](#性能優化)
+  - [flutter 中開兩次 webview(較簡單)](#flutter中開兩次webview較簡單)
+  - [flutter 中啟動 local server](#flutter中啟動local-server)
+- [參考資料](#參考資料)
+
 ## 介紹
 
 當公司內部 app team 人力資源有限時，一種常見做法是採用**混合式架構**。也就是在原生應用中，透過 **WebView**嵌入網頁應用程式。這種方式能夠將工作劃分為：部分功能由 app team 開發，其他部分則以網頁技術實作。
